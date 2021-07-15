@@ -12,7 +12,7 @@ var currentDate = moment().format('MMMM Do YYYY');
 // This function creates the time that is displayed on the header
 // it creates the and shows the current time and date
 function displayDayTime() {
-    var currentTime = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+    var currentTime = moment().format('MMM DD, YYYY [at] hh:mm:ss A');
     timeDisplay.textContent = (currentTime);
 }
 
@@ -29,10 +29,12 @@ if (localData !== null) {
 // they are in the future, past or the present based on the current time
 for (var a = 0; a < timeSlotID.length; a++) {
     
+    // This variable basically grabn a specific input based on the ID
+    // The '#' in the timeSlotID acts as the ID element
     var inputEl = $(timeSlotID[a]);
     var button = inputEl.parent().parent().find("button");
 
-    // The logic behind this if statment is that if the timeSlot (on the current day stylized as Date + timeslot) is larger 
+    // The logic behind this if statment is that if the timeSlot (on the current day (stylized as Date + timeslot) is larger 
     // (or in time words comes after) the current date and time, than the "current date + timeSlot" is considered
     // to be in the future (since it comes after relative to the current time)
     // You have to look at the perspective of timeSlot    
@@ -47,8 +49,8 @@ for (var a = 0; a < timeSlotID.length; a++) {
               }
         });
 
-    // The logic behind this if statement is that a timeslot is less than the current time but is smaller than the date
-    // with a one hour difference, then the timeslot is in the present. 
+    // The logic behind this if statement is that a timeslot (on the current day) is less or equal than the current 
+    // time but is greater than the date with a one hour difference, then the timeslot is in the present. 
     } else if ((currentDate +  ", " + timeSlot[a]) <= currentTime && (currentDate +  ", " + timeDif[a]) > currentTime) {
         inputEl.attr("class", "present");
 
@@ -81,15 +83,15 @@ for (var a = 0; a < timeSlotID.length; a++) {
 // This function should save what text in local storage when the save button is clicked.
 $("button").on("click", function() {
     event.preventDefault();
-    var container = $(this).parent().parent();  
+    var container = $(this).parent().parent();
     var inputValue = container.find("input").val();
     var inputId = container.find("input").attr("id");
-    var textObj = {
+    var planContent = {
       "input-id": inputId,
       "input-value": inputValue };
     
-    if (textObj["input-value"] !== "") {
-      contents.push(textObj);
+    if (planContent["input-value"] !== "") {
+      contents.push(planContent);
       localStorage.setItem("planner-content", JSON.stringify(contents));
     }
 });

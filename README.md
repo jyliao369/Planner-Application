@@ -18,6 +18,14 @@ The goal of this project is very simple: create a simple calendar application th
   * Preventing Default
 
 ## Learning Objectives
+* Understand how to use JQuery and the Javascript Library
+* HTML traversal through the use of JQuery
+* Continue to learn how to use localStorage
+  * Learn how to store
+  * Learn how to get from localStorage
+* Learn how to use Bootstrap
+  * Understand that Bootstrap is a css Framework
+  * Learn how to customize and style through HTML instead of CSS
 
 
 ## Screeshots/Image
@@ -45,4 +53,12 @@ The goal of this project is very simple: create a simple calendar application th
 --Code of a Completed Working Application--
 ![Javascript Code](./screenshots/screenshot8.JPG)
 
+
+--Final Product of the Day Planner--
+![Final Product](./screenshots/screenshot9.JPG)
+
 ## Working Application
+
+GitHub Site: https://github.com/jyliao369/Planner-Application
+
+Application Website:
