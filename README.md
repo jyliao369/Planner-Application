@@ -61,4 +61,4 @@ The goal of this project is very simple: create a simple calendar application th
 
 GitHub Site: https://github.com/jyliao369/Planner-Application
 
-Application Website:
+Application Website: https://jyliao369.github.io/Planner-Application/
